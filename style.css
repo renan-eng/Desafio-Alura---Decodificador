@@ -1,0 +1,121 @@
+/****     Variables      ****/
+:root {
+    --dark-blue: #0A3871;
+    --gray-400: #495057;
+    --white: #ffffff;
+    --gray-botao: #D8DFE8;
+    --dark-blue-botao: #0a3062;
+}
+/***************************/
+body {
+    font-family: Inter, sans-serif;
+    background: white;
+    width: 100%;
+}
+.header {
+
+
+}
+
+.logoRenan {
+    position: absolute;
+    right: 1500px;
+    margin: 0;
+    top: 30px;
+    font-size: 55px;
+    color: var(--dark-blue);
+    font-family: "Noto Mono", monospace;
+}
+
+main {
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    width: 80%;
+    gap: 60px;
+}
+
+.principal {
+    display: flex;
+    flex-direction: column;
+    height: 750px;
+    width: 100%;
+    justify-content: space-around;
+}
+
+#frase {
+    margin:100px 0 0 320px;
+    padding: 0;
+    border: 0;
+    width: 680px;
+    height: 700px;
+    font-weight: 400;
+    font-size: 32px;
+    background: none;
+    border-radius: 0;
+    color: var(--dark-blue);
+    opacity: 1;
+    resize: none;
+}
+#frase::placeholder {
+    opacity: 1;
+}
+#frase:focus {
+    outline: none;
+}
+
+.info {
+    margin: 20px 0 0 320px;
+    color: var(--gray-400);
+    font-size: 12px;
+}
+.botaos {
+    display: flex;
+    flex-direction: row;
+    width: 680px;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+    margin: 10px 0 0 320px;
+
+}
+.botao {
+    width: 328px;
+    height: 67px;
+    border-radius: 24px;
+    background-color: var(--dark-blue);
+    border: 1px solid #0A3871;
+    color: var(--white);
+    transition: 400ms;
+}
+.botao:last-child {
+    background-color: var(--gray-botao);
+    color: var(--dark-blue);
+}
+
+.botao:hover {
+    background-color: var(--dark-blue-botao);
+    cursor: pointer;
+}
+.botao:last-child:hover {
+    background-color: var(--white);
+    cursor: pointer;
+
+}
+
+.menssagem {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 120px 0 0;
+    background: var(--white);
+    height: 678px;
+    border-radius: 32px;
+    box-shadow: 0 12px 24px -3px rgba(0, 0, 0, 0.3);
+    padding: 2em;
+    text-align: center;
+}
+
+
+@media screen and (max-width: 900px) {
+}

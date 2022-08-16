@@ -2,13 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="style.css">
     <title>Decodificador</title>
 </head>
 <body>
-    <div class="logo">
-        <span class="logoRenan">r</span>
+<header>
+    <img src="assets/Vector.png" class="logoRenan" alt="logo alura">
+</header>
+<main>
+    <div class="principal">
+        <textarea name="frase" id="frase" cols="30" rows="30" placeholder="Digite aqui seu texto"></textarea>
+        <p class="info">&#128712; Apenas letras minúsculas e sem acento.</p>
+
+        <div class="botaos">
+            <input class="botao" type="submit" value="Criptografar">
+            <input class="botao" type="submit" value="Descriptografar">
+        </div>
     </div>
+    <div class="menssagem">
+        <p class="criptografia">Mensagem sera exibida aqui</p>
+
+        <div>
+            <img src="assets/sittingHuman.svg" alt="Pessoa sentada com uma lupa">
+            <h3>Nenhuma mensagem encontrada</h3>
+            <p>Digite um texto que você deseja criptografar ou descriptografar </p>
+        </div>
+    </div>
+
+</main>
 </body>
 </html>
