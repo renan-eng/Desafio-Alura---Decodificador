@@ -14,16 +14,18 @@
 </header>
 <main>
     <div class="principal">
-        <textarea name="frase" id="frase" cols="30" rows="30" placeholder="Digite aqui seu texto"></textarea>
-        <p class="info">&#128712; Apenas letras minúsculas e sem acento.</p>
+        <form id="form">
+            <textarea name="frase" id="frase" cols="30" rows="30" placeholder="Digite aqui seu texto"></textarea>
+            <p class="info">&#128712; Apenas letras minúsculas e sem acento.</p>
 
-        <div class="botaos">
-            <input class="botao" type="submit" value="Criptografar">
-            <input class="botao" type="submit" value="Descriptografar">
-        </div>
+            <div class="botaos">
+                <input class="botao" onclick="escreveParagrafo()" id="cript" type="submit" value="Criptografar">
+                <input class="botao" onclick="escreveParagrafo()" id="descript" type="submit" value="Descriptografar">
+            </div>
+        </form>
     </div>
-    <div class="menssagem">
-        <p class="criptografia">Mensagem sera exibida aqui</p>
+    <div class="menssagem" id="menssagem">
+        <p id="criptografia">Mensagem sera exibida aqui</p>
 
         <div>
             <img src="assets/sittingHuman.svg" alt="Pessoa sentada com uma lupa">
