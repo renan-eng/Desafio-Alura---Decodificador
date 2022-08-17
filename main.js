@@ -6,12 +6,13 @@ const alfabeto = "AÁÃÂÀaàáãâBbCcÇçDdEÉeèéêFfGgHhIiíìJjKkLlMmNnO�
 let fraseCript = "";
 let fraseDecript = "";
 
+//Essa função tem como objetico pegar a variável alfabeto e inverter a ordem dos caracteres
 function reverteString(str) {
     return str.split('').reverse().join('');
 }
 
-let alfabetoInverso = reverteString(alfabeto);
-console.log(alfabetoInverso)
+//alfabetoInverso contém todos os caracteres na ordem inversa do alfabeto
+const alfabetoInverso = reverteString(alfabeto);
 
 //Toda vez que a página recarrega executa uma função chamada carregaPagina
 window.addEventListener("load", carregaPagina);
@@ -28,10 +29,13 @@ function carregaPagina() {
 function encriptador(e) {
     e.preventDefault();
     let frase = document.getElementById('frase').value;
-    let element = document.getElementById("criptografia");
     segredo(frase);
     console.log(fraseCript);
     escreveParagrafo(fraseCript);
+    let btn = document.getElementById("copiar");
+    if(btn) {
+        btn.textContent = `Copiar`;
+    }
 }
 
 
@@ -39,13 +43,16 @@ function encriptador(e) {
 function descriptografar(e) {
     e.preventDefault();
     let frase = document.getElementById('frase').value;
-    let element = document.getElementById("criptografia");
     segredoInv(frase);
     console.log(fraseDecript);
     escreveParagrafo(fraseDecript);
+    let btn = document.getElementById("copiar");
+    if(btn) {
+        btn.textContent = `Copiar`;
+    }
 }
 
-//Funçao que faz a criptografia
+//Função que faz a criptografia
 function segredo(frase) {
     for (let i = 0; frase.length >= i; i++) {
         for (let j = 0; alfabeto.length - 1 >= j; j++) {
@@ -73,11 +80,42 @@ function segredoInv(frase) {
     return fraseDecript;
 }
 
+//Função que escreve o resultado das funções acima dentro do nosso HTML
 function escreveParagrafo(texto) {
     let element = document.getElementById("criptografia");
+    let removerDiv = document.getElementById("msgNaoEcontrada");
     if (element.innerText !== texto){
         element.innerHTML = texto;
         fraseDecript = "";
         fraseCript = "";
+        //Remover elementos HTML -> img e texto de msg não encontrada
+        if(removerDiv) {
+            removerDiv.parentElement.removeChild(removerDiv);
+            //Adiciona o botão de copiar
+            addBtn();
+            let btn = document.getElementById("copiar");
+            btn.addEventListener("click", (e) =>{
+                copiarMsg(e);
+                btn.textContent = `Copiado!!!`;
+            })
+        }
     }
 }
+
+//Função que adicionar um botão de copiar
+function addBtn() {
+    let mensagem = document.getElementById("mensagem");
+    let btn = document.createElement("BUTTON");
+    btn.innerHTML = "Copiar";
+    btn.id = "copiar";
+    mensagem.appendChild(btn);
+    return btn;
+}
+
+function copiarMsg(e) {
+    let msg = document.getElementById("criptografia");
+    msg = msg.innerText;
+    console.log(e);
+    return navigator.clipboard.writeText(msg);
+}
+
