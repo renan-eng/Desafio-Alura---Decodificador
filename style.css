@@ -111,6 +111,7 @@ main {
     box-shadow: 0 5px 50px -3px rgba(0, 0, 0, 0.5);
     padding: 2em;
     text-align: center;
+    align-items: center;
 }
 
 @media screen and (max-width: 1600px) {
@@ -131,6 +132,9 @@ main {
         max-width: 400px;
         gap: 10px;
     }
+    .botaos {
+        align-items: center;
+    }
     #frase {
         height: 300px;
     }
@@ -149,10 +153,15 @@ main {
     .info {
         text-align: center;
     }
-    .botaos {
+    .botaos, button {
         flex-direction: column;
         align-items: center;
         width: 100%;
+        gap: 5px
+    }
+
+    #copiar {
+        line-height: 4;
     }
 
 }
